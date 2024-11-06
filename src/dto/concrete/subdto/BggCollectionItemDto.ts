@@ -1,5 +1,5 @@
 import { JsonAlias, JsonClassType, JsonDeserialize, JsonManagedReference, JsonProperty } from "jackson-js";
-import { BggCollectionItemStatsDto, BggCollectionItemStatusDto } from ".";
+import { BggCollectionItemStatsDto, BggCollectionItemStatusDto, BggThingVersionDto } from ".";
 
 export class BggCollectionItemDto {
     @JsonProperty()
@@ -84,4 +84,14 @@ export class BggCollectionItemDto {
     })
     @JsonManagedReference()
     stats: BggCollectionItemStatsDto;
+
+
+    @JsonProperty()
+    @JsonClassType({ type: () => [Array, [BggThingVersionDto]] })
+    @JsonManagedReference()
+    @JsonDeserialize({
+        //eslint-disable-next-line @typescript-eslint/no-explicit-any
+        using: (items: any[]) => items[0]?.item
+    })
+    version!: BggThingVersionDto[];
 }

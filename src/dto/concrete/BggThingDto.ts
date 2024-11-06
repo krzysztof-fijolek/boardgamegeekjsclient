@@ -140,4 +140,10 @@ export class BggThingDto implements IBggDto {
         using: (items: any[]) => items[0]?.item
     })
     versions!: BggThingVersionDto[];
+
+    @JsonProperty()
+    @JsonClassType({ type: () => [Object] })
+    @JsonAlias({ values: ["poll-summary"] })
+    pollSummary!: any;
+
 }
