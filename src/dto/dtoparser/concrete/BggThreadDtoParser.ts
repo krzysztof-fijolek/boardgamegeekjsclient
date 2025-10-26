@@ -6,6 +6,7 @@ export class BggThreadDtoParser implements IDtoParser<BggThreadDto> {
     parser: JsonParser<BggThreadDto>;
     constructor() {
         this.parser = new JsonParser<BggThreadDto>();
+        this.parser.defaultContext.features!.deserialization.FAIL_ON_UNKNOWN_PROPERTIES = false;
     }
     jsonToDto(jsonData: any): Promise<BggThreadDto[]> {
         return new Promise<BggThreadDto[]>((resolve) => {

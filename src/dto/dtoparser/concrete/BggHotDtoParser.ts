@@ -6,6 +6,7 @@ export class BggHotDtoParser implements IDtoParser<BggHotDto> {
     parser: JsonParser<BggHotDto>;
     constructor() {
         this.parser = new JsonParser<BggHotDto>();
+        this.parser.defaultContext.features!.deserialization.FAIL_ON_UNKNOWN_PROPERTIES = false;
     }
     jsonToDto(jsonData: any): Promise<BggHotDto[]> {
         return new Promise<BggHotDto[]>((resolve) => {

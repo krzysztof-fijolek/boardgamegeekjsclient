@@ -6,6 +6,7 @@ export class BggForumDtoParser implements IDtoParser<BggForumDto> {
     parser: JsonParser<BggForumDto>;
     constructor() {
         this.parser = new JsonParser<BggForumDto>();
+        this.parser.defaultContext.features!.deserialization.FAIL_ON_UNKNOWN_PROPERTIES = false;
     }
     jsonToDto(jsonData: any): Promise<BggForumDto[]> {
         return new Promise<BggForumDto[]>((resolve) => {
