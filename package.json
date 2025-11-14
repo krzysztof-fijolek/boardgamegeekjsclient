@@ -1,5 +1,5 @@
 {
-  "version": "2.0.0",
+  "version": "2.0.1",
   "name": "@kfijolek/boardgamegeekclient",
   "description": "TypeScript client to interact with BoardGameGeek public XML API",
   "author": "learningprocesss",
