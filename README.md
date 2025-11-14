@@ -1,4 +1,4 @@
-![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/LearningProcesss/boardgamegeekjsclient/CD%20-%20NPM/main?style=for-the-badge) ![GitHub release (latest by date)](https://img.shields.io/github/v/release/learningprocesss/boardgamegeekjsclient?color=ff595e&style=for-the-badge)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/krzysztof-fijolek/boardgamegeekjsclient?color=4ea8ff&style=for-the-badge)
 
 # boardgamegeekclient
 
@@ -15,6 +15,13 @@ The package now supports the required authorization and can be used to build web
 - :ballot_box_with_check: thing, family, forum, thread, user, guild, play, collection endpoints
 
 ![](/docs/thing.gif)
+
+## Prerequisites
+
+Starting in Fall 2025, BoardGameGeek requires all API clients to use authorization.  
+Before using this package, you **must** register your application on BoardGameGeek and obtain an access token.
+
+Register and manage your application here: https://boardgamegeek.com/applications
 
 ## Installation
 
