@@ -2,12 +2,12 @@
 
 # boardgamegeekclient
 
-It's a wrapper around the offcial boardgamegeek V2 API, 
-with the scope to create a more confortable way to interact with them since they are exposed in XML format.  
-With this package you can create your own web app or integrate your backend for example.
+A wrapper around the official BoardGameGeek V2 API, designed to provide a more convenient way to work with their XML-based endpoints. 
+The package now supports the required authorization and can be used to build web apps or integrate backend services.
 
 ## Key features
 
+- :ballot_box_with_check: Support Authorization via BGG tokens
 - :ballot_box_with_check: Fully typed requests and responses
 - :ballot_box_with_check: Easy to use
 - :ballot_box_with_check: Typescript written
@@ -43,7 +43,7 @@ import { BggClient } from 'boardgamegeekclient';
 Initialize BggClient and get singleton instance
 
 ```js
-const client = BggClient.Create();
+const client = BggClient.Create({ apiKey: 'YOUR_API_KEY' });
 ```
 
 ## API

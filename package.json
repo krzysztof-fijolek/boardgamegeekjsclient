@@ -1,7 +1,7 @@
 {
-  "version": "1.9.4",
+  "version": "2.0.0",
   "name": "@kfijolek/boardgamegeekclient",
-  "description": "Javascript client to interact with BoardGameGeek public XML API",
+  "description": "TypeScript client to interact with BoardGameGeek public XML API",
   "author": "learningprocesss",
   "license": "MIT",
   "main": "dist/cjs/index.js",
