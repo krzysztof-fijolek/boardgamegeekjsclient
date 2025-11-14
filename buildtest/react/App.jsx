@@ -7,7 +7,7 @@ function App() {
 
     useEffect(() => {
 
-        const client = BggClient.Create();
+        const client = BggClient.Create({ apiKey: 'DUMMY_KEY' });
         
         client.thing.query({ id: 331787 }).then(result => {
             console.log(result)

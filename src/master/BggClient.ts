@@ -1,4 +1,5 @@
 import { IBggThingClient, IBggFamilyClient, IBggForumlistClient, IBggForumClient, BggThingClient, BggFamilyClient, BggForumlistClient, BggForumClient, IBggThreadClient, BggThreadClient, BggUserClient, IBggUserClient, IBggGuildClient, BggGuildClient, IBggPlaysClient, BggPlayClient, IBggCollectionClient, BggCollectionClient, IBggSearchClient, BggSearchClient, IBggHotClient, BggHotClient } from "../client";
+import { BggClientOptions } from "../client/dto/BggClientOptions";
 import { BggFamilyDtoParser, BggThingDtoParser, BggForumlistDtoParser, BggForumDtoParser, BggThreadDtoParser, BggUserDtoParser, BggGuildDtoParser, BggPlayDtoParser, BggCollectionDtoParser, BggSearchDtoParser, BggHotDtoParser } from "../dto";
 import { IFetcher, TextFetcher } from "../fetcher";
 import { IRequestPaginator, RequestPaginator } from "../paginator";
@@ -26,8 +27,8 @@ export class BggClient {
     readonly search: Omit<IBggSearchClient, "builder" | "fetcher" | "responseParser" | "resource" | "dtoParser">;
     readonly hot: Omit<IBggHotClient, "builder" | "fetcher" | "responseParser" | "resource" | "dtoParser">;
 
-    private constructor() {
-        const fetcher: IFetcher<string, string> = new TextFetcher();
+    private constructor(apiKey: string) {
+        const fetcher: IFetcher<string, string> = new TextFetcher(apiKey);
         const responseParser: IResponseParser<string, any> = new XmlResponseParser();
         const paginator: IRequestPaginator = new RequestPaginator();
 
@@ -44,9 +45,9 @@ export class BggClient {
         this.hot = new BggHotClient(new GenericQueryBuilder<IHotItemsRequest>(), fetcher, responseParser, new BggHotDtoParser());
     }
 
-    static Create(): BggClient {
+    static Create(options: BggClientOptions): BggClient {
         if (!BggClient.instance) {
-            BggClient.instance = new BggClient();
+            BggClient.instance = new BggClient(options.apiKey);
         }
         return BggClient.instance;
     }

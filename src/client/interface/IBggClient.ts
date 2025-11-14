@@ -11,6 +11,7 @@ export interface IBggClient<T extends IRequest, R extends IBggDto> {
     readonly fetcher: IFetcher<string, string>;
     readonly responseParser: IResponseParser<string, any>;
     readonly dtoParser: IDtoParser<R>;
+    readonly token?: string
   
     query(request: T): Promise<R[]>;
 }

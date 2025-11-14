@@ -18,7 +18,7 @@ export class BggHotClient implements IBggHotClient {
         responseParser: IResponseParser<string, any>,
         dtoParser: IDtoParser<BggHotDto>
     ) {
-        this.resource = "https://www.boardgamegeek.com/xmlapi2/hot";
+        this.resource = "https://boardgamegeek.com/xmlapi2/hot";
         this.builder = builder;
         this.fetcher = fetcher;
         this.responseParser = responseParser;

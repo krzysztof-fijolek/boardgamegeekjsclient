@@ -3,7 +3,7 @@ import { BggClient } from '../../../src/master';
 describe('BggClient', () => {
     it('should be composed by all clients', async () => {
 
-        const instance = BggClient.Create();
+        const instance = BggClient.Create({ apiKey: 'DUMMY_KEY' });
 
         const clients = ['thing', 'family', 'forumlist', 'forum', 'thread', 'user', 'guild', 'play', 'collection', 'search', 'hot'];
 

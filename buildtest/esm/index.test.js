@@ -7,7 +7,7 @@ let reflectionProperties
 let reflectionPropertiesExcludable
 
 beforeAll(() => {
-    client = BggClient.Create()
+    client = BggClient.Create({ apiKey: 'DUMMY_KEY' });
     reflectionProperties = ReflectionType('');
     reflectionPropertiesExcludable = ReflectionTypeExcludable();
 })

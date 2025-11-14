@@ -17,7 +17,7 @@ export class BggCollectionClient implements IBggCollectionClient {
         responseParser: IResponseParser<string, any>,
         dtoParser: IDtoParser<BggCollectionDto>
     ) {
-        this.resource = "https://www.boardgamegeek.com/xmlapi2/collection";
+        this.resource = "https://boardgamegeek.com/xmlapi2/collection";
         this.builder = builder;
         this.fetcher = fetcher;
         this.responseParser = responseParser;

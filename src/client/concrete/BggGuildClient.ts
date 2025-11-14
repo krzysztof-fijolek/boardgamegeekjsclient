@@ -17,7 +17,7 @@ export class BggGuildClient implements IBggGuildClient {
         responseParser: IResponseParser<string, any>,
         dtoParser: IDtoParser<BggGuildDto>
     ) {
-        this.resource = "https://www.boardgamegeek.com/xmlapi2/guild";
+        this.resource = "https://boardgamegeek.com/xmlapi2/guild";
         this.builder = builder;
         this.fetcher = fetcher;
         this.responseParser = responseParser;

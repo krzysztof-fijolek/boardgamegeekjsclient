@@ -21,7 +21,7 @@ export class BggFamilyClient implements IBggFamilyClient {
         dtoParser: IDtoParser<BggFamilyDto>,
         paginator: IRequestPaginator
     ) {
-        this.resource = "https://www.boardgamegeek.com/xmlapi2/family";
+        this.resource = "https://boardgamegeek.com/xmlapi2/family";
         this.builder = builder;
         this.fetcher = fetcher;
         this.responseParser = responseParser;

@@ -1,6 +1,6 @@
 {
   "version": "1.9.4",
-  "name": "boardgamegeekclient",
+  "name": "@kfijolek/boardgamegeekclient",
   "description": "Javascript client to interact with BoardGameGeek public XML API",
   "author": "learningprocesss",
   "license": "MIT",

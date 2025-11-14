@@ -17,7 +17,7 @@ export class BggThreadClient implements IBggThreadClient {
         responseParser: IResponseParser<string, any>,
         dtoParser: IDtoParser<BggThreadDto>
       ) {
-        this.resource = "https://www.boardgamegeek.com/xmlapi2/thread";
+        this.resource = "https://boardgamegeek.com/xmlapi2/thread";
         this.builder = builder;
         this.fetcher = fetcher;
         this.responseParser = responseParser;

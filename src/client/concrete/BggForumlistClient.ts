@@ -22,7 +22,7 @@ export class BggForumlistClient implements IBggForumlistClient {
         dtoParser: IDtoParser<BggForumlistDto>,
         paginator: IRequestPaginator
     ) {
-        this.resource = "https://www.boardgamegeek.com/xmlapi2/forumlist";
+        this.resource = "https://boardgamegeek.com/xmlapi2/forumlist";
         this.builder = builder;
         this.fetcher = fetcher;
         this.responseParser = responseParser;

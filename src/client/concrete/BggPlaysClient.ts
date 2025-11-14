@@ -17,7 +17,7 @@ export class BggPlayClient implements IBggPlaysClient {
         responseParser: IResponseParser<string, any>,
         dtoParser: IDtoParser<BggPlayDto>
       ) {
-        this.resource = "https://www.boardgamegeek.com/xmlapi2/plays";
+        this.resource = "https://boardgamegeek.com/xmlapi2/plays";
         this.builder = builder;
         this.fetcher = fetcher;
         this.responseParser = responseParser;

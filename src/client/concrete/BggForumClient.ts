@@ -17,7 +17,7 @@ export class BggForumClient implements IBggForumClient {
         responseParser: IResponseParser<string, any>,
         dtoParser: IDtoParser<BggForumDto>
     ) {
-        this.resource = "https://www.boardgamegeek.com/xmlapi2/forum";
+        this.resource = "https://boardgamegeek.com/xmlapi2/forum";
         this.builder = builder;
         this.fetcher = fetcher;
         this.responseParser = responseParser;

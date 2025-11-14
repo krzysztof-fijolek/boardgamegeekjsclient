@@ -1,26 +1,37 @@
-import { IFetcher } from "../interface";
+import { IFetcher } from '../interface';
 import fetch from 'isomorphic-unfetch';
 
 export class TextFetcher implements IFetcher<string, string> {
-    async doFetch(query: string): Promise<string> {
-        let response = await this.internalFetch(query);
+  apiKey: string;
 
-        while (response.status === 202) {
-            await this.delay(6000);
+  constructor(apiKey: string) {
+    this.apiKey = apiKey;
+  }
 
-            response = await this.internalFetch(query);
-        }
+  async doFetch(query: string): Promise<string> {
+    let response = await this.internalFetch(query);
 
-        return response.text();
+    while (response.status === 202) {
+      await this.delay(6000);
+
+      response = await this.internalFetch(query);
     }
 
-    async internalFetch(query: string): Promise<any> {
-        const response = await fetch(query);
-        return response;
-    }
-    async delay(waitFor: number): Promise<any> {
-        return new Promise((resolve) => {
-            setTimeout(resolve, waitFor);
-        });
-    }
+    return response.text();
+  }
+
+  async internalFetch(query: string): Promise<any> {
+    const response = await fetch(query, {
+      headers: {
+        Authorization: 'Bearer ' + this.apiKey,
+      },
+    });
+
+    return response;
+  }
+  async delay(waitFor: number): Promise<any> {
+    return new Promise((resolve) => {
+      setTimeout(resolve, waitFor);
+    });
+  }
 }

@@ -17,7 +17,7 @@ export class BggSearchClient implements IBggSearchClient {
         responseParser: IResponseParser<string, any>,
         dtoParser: IDtoParser<BggSearchDto>
     ) {
-        this.resource = "https://www.boardgamegeek.com/xmlapi2/search";
+        this.resource = "https://boardgamegeek.com/xmlapi2/search";
         this.builder = builder;
         this.fetcher = fetcher;
         this.responseParser = responseParser;
